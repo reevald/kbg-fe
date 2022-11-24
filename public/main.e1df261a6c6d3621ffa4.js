@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=document.getElementById("elemImage"),t=document.getElementById("elemInputImage");t.addEventListener("change",(()=>{console.log("walawal"),e.src=window.URL.createObjectURL(t.files[0])}))})();
