@@ -5,28 +5,79 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="output.css">
   <title>Kertas Batu Gunting</title>
 </head>
 
-<body>
-  <h1 class="text-blue-500">Kertas, Batu atau Gunting ???</h1>
-  <label for="elemInputImage">
-    Pilih Gambar Nih
-  </label>
-  <input style="display: none;" type="file" id="elemInputImage" accept="image/*"/>
-  <button>
-    Klasifikasi
-  </button>
-  <div>
-    <img id="elemImage" src="" />
+<body style="font-family: 'Andika', sans-serif;">
+  <div class="flex flex-col items-center justify-center h-screen bg-blue-50">
+    <div class="flex flex-col items-center w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden">
+      <header class="bg-blue-400 w-full flex flex-row justify-center py-4">
+        <h1 class="text-xl font-bold text-yellow-300">✋✊✌️ JanKen ✌️✊✋</h1>
+      </header>
+      <main class="w-full">
+        <label for="elemInputImage" class="flex flex-col items-center justify-center cursor-pointer h-48 border-dashed border-2 border-blue-200 m-4 relative group hover:border-blue-400">
+          <div class="absolute z-20 top-0 flex flex-col items-center justify-center w-full h-full group-hover:bg-blue-50/75 text-blue-200 group-hover:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M21 15v3h3v2h-3v3h-2v-3h-3v-2h3v-3h2zm.008-12c.548 0 .992.445.992.993v9.349A5.99 5.99 0 0 0 20 13V5H4l.001 14 9.292-9.293a.999.999 0 0 1 1.32-.084l.093.085 3.546 3.55a6.003 6.003 0 0 0-3.91 7.743L2.992 21A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016zM8 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" class="fill-blue-200 group-hover:fill-blue-400"/>
+            </svg>
+            Upload
+          </div>
+          <img id="elemImage" class="h-auto max-h-48 p-2" src="" />
+        </label>
+        <input style="display: none;" type="file" id="elemInputImage" accept="image/*" />
+        <div class="w-full flex flex-row justify-between px-4 items-center">
+          <div class="flex flex-row items-center">
+            <div class="border-dashed border-2 border-blue-200 flex flex-col py-1 items-center px-2">
+              <div class="text-gray-400">You</div>
+              <div class="text-2xl font-bold text-gray-500" id="scoreYou">0</div>
+            </div>
+            <div class="loader ml-2" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class="animate-spin"><path fill="none" d="M0 0h24v24H0z"/><path class="fill-blue-200" d="M12 2a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm8.66-10a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5A1 1 0 0 1 20.66 7zM7.67 14.5a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5a1 1 0 0 1 1.366.366zM20.66 17a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 0 1 1-1.732l2.598 1.5A1 1 0 0 1 20.66 17zM7.67 9.5a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 1 1 1-1.732l2.598 1.5A1 1 0 0 1 7.67 9.5z"/></svg>
+            </div>
+            <div class="text-5xl" id="emojiYou"></div>
+          </div>
+          <div class="text-xl text-gray-500 font-bold">VS</div>
+          <div class="flex flex-row items-center">
+            <div class="text-5xl" id="emojiBot"></div>
+            <div class="loader mr-2" style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class="animate-spin"><path fill="none" d="M0 0h24v24H0z"/><path class="fill-blue-200" d="M12 2a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm8.66-10a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5A1 1 0 0 1 20.66 7zM7.67 14.5a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5a1 1 0 0 1 1.366.366zM20.66 17a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 0 1 1-1.732l2.598 1.5A1 1 0 0 1 20.66 17zM7.67 9.5a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 1 1 1-1.732l2.598 1.5A1 1 0 0 1 7.67 9.5z"/></svg>
+            </div>
+            <div class="border-dashed border-2 border-blue-200 flex flex-col py-1 items-center px-2">
+              <div class="text-gray-400">Bot</div>
+              <div class="text-2xl font-bold text-gray-500" id="scoreBot">0</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="w-full flex flex-col items-center mt-4">
+        <div class="flex flex-row justify-center bg-yellow-400 cursor-pointer text-white py-2 hover:bg-yellow-500 w-full" id="detailPredict">
+          <h2>Detail Prediction</h2>
+          <svg class="mt-1 animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" stroke-width="0.5" stroke="#fff" fill="rgba(255,255,255,1)"></path></svg>
+        </div>
+        <div class="bg-yellow-50 w-full">
+          <div class="loader flex flex-row justify-center w-full py-4" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" class="animate-spin"><path fill="none" d="M0 0h24v24H0z"/><path class="fill-gray-400" d="M12 2a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm8.66-10a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5A1 1 0 0 1 20.66 7zM7.67 14.5a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5a1 1 0 0 1 1.366.366zM20.66 17a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 0 1 1-1.732l2.598 1.5A1 1 0 0 1 20.66 17zM7.67 9.5a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 1 1 1-1.732l2.598 1.5A1 1 0 0 1 7.67 9.5z"/></svg>
+          </div>
+          <list-predict style="display: none;" class="px-4">
+            <div class="py-4 text-sm text-gray-500 w-full text-center">
+              Please upload image first!
+            </div>
+          </list-predict>
+        </div>
+      </footer>
+    </div>
+    <div class="flex flex-row items-center">
+      <div class="bg-white rounded-lg px-4 py-2 mr-4 my-4 shadow-md text-blue-300 hover:bg-blue-400 hover:text-white cursor-pointer">How to Play ?</div>
+      <div class="bg-white rounded-lg px-4 py-2 my-4 shadow-md text-blue-300 hover:bg-blue-400 hover:text-white cursor-pointer">Download Sample</div>
+    </div>
   </div>
-  <h2>
-    Hasil Prediksi: <span style="color: green;" id="elemPrediksi"></span>
-  </h2>
-  <ul id="elemDetail">
-
-  </ul>
 </body>
 
 </html>

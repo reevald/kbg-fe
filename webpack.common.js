@@ -1,15 +1,8 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
  
 module.exports = {
   entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: '[name].[contenthash].js'
-  },
-  /* plugin */
   plugins: [
-    /* HTML Webpack Plugin */
     new HtmlWebpackPlugin({
       template: './src/template.html',
       filename: 'index.html',
@@ -27,9 +20,4 @@ module.exports = {
       },
     },
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  }
 };

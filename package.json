@@ -7,7 +7,9 @@
     "build-dev": "webpack --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "start-dev": "webpack serve --config webpack.dev.js",
-    "start-prod": "webpack serve --config webpack.prod.js"
+    "start-prod": "webpack serve --config webpack.prod.js",
+    "tw-serve-dev": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "tw-build-prod": "npx tailwindcss -i ./src/input.css -o ./public/output.css --minify"
   },
   "repository": {
     "type": "git",
