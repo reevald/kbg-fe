@@ -10,7 +10,6 @@ const displayLoaders = (boolStatus) => {
 const sendDataToPredict = async (imgBase64, elemListPredict) => {
   displayLoaders(true);
   const formData = new FormData();
-  console.log(imgBase64);
   formData.append('imgBase64', imgBase64.replace(/^data:image\/[a-z]+;base64,/, ""));
   try {
     const response = await axios({

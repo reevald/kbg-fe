@@ -1,7 +1,6 @@
 import './item-predict';
 
 class ListPredict extends HTMLElement {
-  // set listDataPredicts(data)
   set dataPredicts(arrPred) {
     this._dataPredicts = arrPred;
     this.render();
