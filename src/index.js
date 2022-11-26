@@ -14,6 +14,10 @@ const elemEmojiYou = document.getElementById("emojiYou");
 const elemScoreBot = document.getElementById("scoreBot");
 const elemEmojiBot = document.getElementById("emojiBot");
 
+const elemBtnOpenHelp = document.getElementById("btnOpenHelp");
+const elemBtnCloseHelp = document.getElementById("btnCloseHelp");
+const elemWrapHelp = document.getElementById("wrapHelp");
+
 const score = {
   you: 0,
   bot: 0
@@ -83,4 +87,12 @@ elemInputImage.addEventListener("change", () => {
 elemDetailPredict.addEventListener("click", () => {
   const display = elemListPredict.style.display;
   elemListPredict.style.display = display == 'none' ? 'block' : 'none';
+});
+
+elemBtnCloseHelp.addEventListener("click", () => {
+  elemWrapHelp.style.display = "none";
+});
+
+elemBtnOpenHelp.addEventListener("click", () => {
+  elemWrapHelp.style.display = "flex";
 });
